@@ -9,4 +9,6 @@ def api_partidos():
     return jsonify(datos)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    if not os.phat.exists(app.confing['UPLOAD_FOLDER']):
+        os.makedirs(app.confing['UPLOAD_FOLDER'])
+    app.run(debug=True, host='0.0.0.0', port=5000)
